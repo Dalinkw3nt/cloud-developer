@@ -37,12 +37,13 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
         message: "The image url is required or malformed"
       })
     
-      return res.sendFile("/filteredimage");
+    res.status(200).sendFile("/filteredimage");
 
-    }
+    
 
 
-  });
+  } 
+});
     
   //! END @TODO1
   
