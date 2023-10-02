@@ -35,7 +35,10 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     if (!imageUrl) {
       return res.status(400).send({
         message: "The image url is required or malformed"
-      });
+      })
+    
+      return res.sendFile("/filteredimage");
+
     }
 
 
