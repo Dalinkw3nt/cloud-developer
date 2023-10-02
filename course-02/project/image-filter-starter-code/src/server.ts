@@ -28,7 +28,19 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
 
   /**************************************************************************** */
+  app.get("/filteredimage", async (req, res) => {
+    const imageUrl = req.query.image_url;
 
+    // check imageUrl is valid
+    if (!imageUrl) {
+      return res.status(400).send({
+        message: "The image url is required or malformed"
+      });
+    }
+
+
+  });
+    
   //! END @TODO1
   
   // Root Endpoint
@@ -44,3 +56,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       console.log( `press CTRL+C to stop server` );
   } );
 })();
+
+function async(req: any, res: any): import("express-serve-static-core").RequestHandler {
+      throw new Error('Function not implemented.');
+    }
